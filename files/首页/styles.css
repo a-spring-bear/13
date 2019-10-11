@@ -1,0 +1,147 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:static;
+  left:auto;
+  width:1566px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u12_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1366px;
+  height:768px;
+}
+#u12 {
+  border-width:0px;
+  position:absolute;
+  left:200px;
+  top:99px;
+  width:1366px;
+  height:768px;
+}
+#u12_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u13_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:429px;
+  height:105px;
+}
+#u13 {
+  border-width:0px;
+  position:absolute;
+  left:661px;
+  top:689px;
+  width:429px;
+  height:105px;
+  font-size:48px;
+  color:#006633;
+}
+#u13_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u14_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:429px;
+  height:119px;
+}
+#u14 {
+  border-width:0px;
+  position:absolute;
+  left:661px;
+  top:515px;
+  width:429px;
+  height:119px;
+  font-size:48px;
+  color:#006633;
+}
+#u14_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u15_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:420px;
+  height:110px;
+}
+#u15 {
+  border-width:0px;
+  position:absolute;
+  left:666px;
+  top:181px;
+  width:420px;
+  height:110px;
+  font-size:48px;
+  color:#006633;
+}
+#u15_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u16_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:420px;
+  height:103px;
+}
+#u16 {
+  border-width:0px;
+  position:absolute;
+  left:666px;
+  top:360px;
+  width:420px;
+  height:103px;
+  font-size:48px;
+  color:#006633;
+}
+#u16_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}

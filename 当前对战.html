@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>当前对战</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/当前对战/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/当前对战/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+    <script src="resources/fun.js"></script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (图片) -->
+      <div id="u17" class="ax_default image">
+        <img id="u17_img" class="img " src="images/当前对战/u17.png"/>
+      </div>
+
+      <!-- Unnamed (返回) -->
+      <div id="u18" class="ax_default image" onclick="document.location.href =('首页.html')">
+        <img id="u18_img" class="img " src="images/登录/u3.png"/>
+      </div>
+
+      <!-- “出牌” (矩形) -->
+      <div id="u19" class="ax_default button" data-label="“出牌”" onclick="submit()">
+        <div id="u19_div" class=""></div>
+        <div id="u19_text" class="text ">
+          <p><span>出牌</span></p>
+        </div>
+      </div>
+
+      <!-- “开启战局” (矩形) -->
+      <div id="u20" class="ax_default button" data-label="“开启战局”" onclick="open()">
+        <div id="u20_div" class=""></div>
+        <div id="u20_text" class="text ">
+          <p><span>开启战局</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

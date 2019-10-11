@@ -1,0 +1,89 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:static;
+  left:auto;
+  width:1565px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u23_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1366px;
+  height:768px;
+}
+#u23 {
+  border-width:0px;
+  position:absolute;
+  left:199px;
+  top:101px;
+  width:1366px;
+  height:768px;
+}
+#u23_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u24_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:168px;
+  height:106px;
+}
+#u24 {
+  border-width:0px;
+  position:absolute;
+  left:199px;
+  top:101px;
+  width:168px;
+  height:106px;
+}
+#u24_text {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+table.grid {
+  border-radius: 6px;
+  font-family: verdana,arial,sans-serif;
+  font-size:11px;
+  color:#fde007;
+  border-width: 1px;
+  border-color:#fde007 ;
+  border-collapse: collapse;
+}
+table.grid th {
+
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #fde007;
+
+}
+table.grid td {
+
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #fde007;
+
+}
