@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史战局</title>
+    <link type="text/css" href="history.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body onload="my()">
+<a href="start.html"><button>退出</button></a>
+<div>
+    <input id="input" type="text">
+    <button style="text-align: center" onclick="my()">查询</button>
+    <table id = 'tableHead'>
+        <tr id = 'first'>
+            <th style="width: 10%">ID</th>
+            <th style="width: 70%;text-align: center">详情</th>
+            <th style="width: 10%">分数</th>
+            <th style="width: 10%">时间</th>
+        </tr>
+    </table>
+</div>
+<script>
+    function my() {
+        let player_id = document.getElementById('input').value
+        $.ajax(
+            {
+                type: "GET",
+                url: "https://api.shisanshui.rtxux.xyz/history",
+                data: {
+                    player_id: player_id || localStorage.getItem('user_id'),
+                    limit: 3,
+                    page: 5
+                },
+                dataType: "json",
+                contentType: "application/json",
+                beforeSend: function(request) {
+                    request.setRequestHeader("X-Auth-Token", localStorage.getItem('token'));
+                },
+                success: (result) => {
+
+                    let table = document.getElementById('tableHead')
+                    let length = table.children.length
+                    for (let i = 1; i < length; i++){
+                        table.removeChild(table.children[1])
+                    }
+                    result.data.forEach(element => {
+                        let tr = document.createElement('tr'),
+                            id = document.createElement('td'),
+                            score = document.createElement('td'),
+                            card = document.createElement('td'),
+                            timestamp = document.createElement('td')
+
+                        id.textContent = element.id
+                        score.textContent = element.score
+                        card.textContent = element.card
+                        timestamp.textContent = element.timestamp
+
+                        tr.appendChild(id)
+                        tr.appendChild(card)
+                        tr.appendChild(score)
+                        tr.appendChild(timestamp)
+
+                        table.appendChild(tr)
+                    });
+                }
+            }
+        )
+    }
+
+</script>
+</body>
+</html>

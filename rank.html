@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排行榜</title>
+    <link rel="stylesheet" type="text/css" href="rank.css">
+</head>
+<body onload="my()">
+<a href="start.html"><button>退出</button></a>
+<div>
+    <table id="demo">
+        <tr>
+            <td>排名</td>
+            <td>ID</td>
+            <td>用户名</td>
+            <td>总分</td>
+        </tr>
+    </table>
+</div>
+<script>
+    function my() {
+        var data = null;
+        var obj;
+        var xhr = new XMLHttpRequest();
+        // xhr.withCredentials = true;
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4&&xhr.status==200){
+                var json=xhr.responseText;
+                obj=JSON.parse(xhr.responseText);
+                function getJsonLength(json){
+                    var jsonLength=0;
+                    for (var i in json) {
+                        var j=jsonLength;
+                        var s=j+1;
+                        document.getElementById("demo").innerHTML+='<tr><td>'+s+'</td><td>'+obj[j].player_id+'</td><td>'+obj[j].name+'</td><td>'+obj[j].score+'</td></tr>';
+                        jsonLength++;
+                    }
+                }
+                getJsonLength(json);
+            }
+        }
+        xhr.open("GET", "https://api.shisanshui.rtxux.xyz/rank",true);
+        xhr.send(data);
+    }
+
+</script>
+</body>
+</html>

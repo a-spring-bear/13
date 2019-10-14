@@ -21,6 +21,74 @@
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
     <script src="resources/fun.js"></script>
+    <style>
+      #wrap1 {
+        position:absolute;
+        top: 300px;
+        left: 790px;
+      }
+      #wrap2 {
+        position:absolute;
+        top: 300px;
+        left: 820px;
+      }
+      #wrap3 {
+        position:absolute;
+        top: 300px;
+        left: 850px;
+      }
+      #wrap4 {
+        position:absolute;
+        top: 420px;
+        left: 760px;
+      }
+      #wrap5 {
+        position:absolute;
+        top: 420px;
+        left: 790px;
+      }
+      #wrap6 {
+        position:absolute;
+        top: 420px;
+        left: 820px;
+      }
+      #wrap7 {
+        position:absolute;
+        top: 420px;
+        left: 850px;
+      }
+      #wrap8 {
+        position:absolute;
+        top: 420px;
+        left: 880px;
+      }
+      #wrap9 {
+        position:absolute;
+        top: 540px;
+        left: 760px;
+      }
+      #wrap10 {
+        position:absolute;
+        top: 540px;
+        left: 790px;
+      }
+      #wrap11{
+        position:absolute;
+        top: 540px;
+        left: 820px;
+      }
+      #wrap12{
+        position:absolute;
+        top: 540px;
+        left: 850px;
+      }
+      #wrap13 {
+        position:absolute;
+        top: 540px;
+        left: 880px;
+      }
+
+    </style><!---牌的安放位置--->
   </head>
   <body>
     <div id="base" class="">
@@ -34,9 +102,33 @@
       <div id="u18" class="ax_default image" onclick="document.location.href =('首页.html')">
         <img id="u18_img" class="img " src="images/登录/u3.png"/>
       </div>
+      <!---显示牌型--->
+      <div >
+      <div>
+        <img  id="wrap1"  width="90px" height="120px" class="">
+        <img id="wrap2"  width="90px" height="120px" class="">
+        <img id="wrap3" width="90px" height="120px" class="">
+      </div>
+        <br>
+        <div>
+          <img id="wrap4" width="90px" height="120px" class="">
+          <img id="wrap5" width="90px" height="120px" class="">
+          <img id="wrap6" width="90px" height="120px" class="">
+          <img id="wrap7"  width="90px" height="120px" class="">
+          <img id="wrap8"  width="90px" height="120px" class="">
+        </div>
+        <br>
+        <div>
+          <img id="wrap9"  width="90px" height="120px" class="">
+          <img id="wrap10"  width="90px" height="120px" class="">
+          <img id="wrap11"   width="90px" height="120px" class="">
+          <img id="wrap12"  width="90px" height="120px" class="">
+          <img id="wrap13"  width="90px" height="120px" class="">
+        </div>
 
+    </div>
       <!-- “出牌” (矩形) -->
-      <div id="u19" class="ax_default button" data-label="“出牌”" onclick="submit()">
+      <div id="u19" class="ax_default button" data-label="“出牌”" onclick="play()">
         <div id="u19_div" class=""></div>
         <div id="u19_text" class="text ">
           <p><span>出牌</span></p>
@@ -44,7 +136,7 @@
       </div>
 
       <!-- “开启战局” (矩形) -->
-      <div id="u20" class="ax_default button" data-label="“开启战局”" onclick="open()">
+      <div id="u20" class="ax_default button" data-label="“开启战局”" onclick="opennnn()">
         <div id="u20_div" class=""></div>
         <div id="u20_text" class="text ">
           <p><span>开启战局</span></p>
