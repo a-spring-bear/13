@@ -59,30 +59,44 @@
     </div>
     <script>
       function my() {
-        var data = null;
-        var obj;
-        var xhr = new XMLHttpRequest();
-        // xhr.withCredentials = true;
-        xhr.onreadystatechange=function(){
-          if(xhr.readyState==4&&xhr.status==200){
-            var json=xhr.responseText;
-            obj=JSON.parse(xhr.responseText);
-            function getJsonLength(json){
-              var jsonLength=0;
-              for (var i in json) {
-                var j=jsonLength;
-                var s=j+1;
-                document.getElementById("mytable").innerHTML+='<tr><td>'+s+'</td><td>'+obj[j].player_id+'</td><td>'+obj[j].name+'</td><td>'+obj[j].score+'</td></tr>';
-                jsonLength++;
-              }
-            }
-            getJsonLength(json);
-          }
-        }
-        xhr.open("GET", "https://api.shisanshui.rtxux.xyz/rank",true);
-        xhr.send(data);
-      }
 
+        $.ajax({
+
+          url: 'https://api.shisanshui.rtxux.xyz/rank',
+
+          type: 'GET',
+
+          contentType:"application/json",
+
+          datatype: "json",
+
+          success:function(res){
+
+            console.log(res);
+var j=1;
+            for(i in res) //data.data指的是数组，数组里是8个对象，i为数组的索引
+
+            {
+
+              var tr;
+
+              tr='<td>'+(j++)+'</td>'+'<td>'+res[i].player_id+'</td>'+'<td>'+res[i].name+'</td>'+'<td>'+res[i].score
+
+              $("#mytable").append('<tr>'+tr+'</tr>')
+
+            }
+
+          },
+
+          fail:function (err) {
+
+            alert("error！");
+
+          }
+
+        });
+
+      }
     </script>
   </body>
 </html>

@@ -5,6 +5,7 @@ var cards;
 var c1,c2,c3;//三墩
 var c11,c22,c33;//三墩分割为单张
 var c;
+var s;//历史详情里52张牌
 //登录
 function login() {
     var user = document.getElementById("u5_input").value.trim();
@@ -106,7 +107,7 @@ function opennnn() {
         success:function(res){
             console.log(res);
             console.log("success");
-            alert("请出牌!")
+            alert("请出牌!");
             cards=res.data.card;
             console.log(cards);
             //分成三墩
@@ -153,7 +154,7 @@ function play(){
 
     });
 }
-//显示牌型
+//显示13张牌型
 function f( i ) {
     switch (c[i]) {
         case "*A":
@@ -282,7 +283,7 @@ function show() {
 }
 //排行榜在HTML文件中
 
-// //历史战局详情
+// //我的历史战局
 var x=0;//页码
 function add(){document.getElementById("demo").innerHTML=null;x++;myhis(); }
 function dec(){if(x>0){document.getElementById("demo").innerHTML=null;x--;myhis();} else {alert("前面没有页数啦！"); return;}}
@@ -341,46 +342,216 @@ $.ajax({
 });
 
 }
+//历史战局详情
 function his() {
-    var id=document.getElementById("id").value;
+
+    var idd=document.getElementById("idd").value.trim();//战局id
     token =localStorage.getItem("token1");
+
     $.ajax({
-        url:"https://api.shisanshui.rtxux.xyz/history/{id}",
-        type:"GET",
-        headers:{"X-Auth-Token":token},
-        data: JSON.stringify({
-            "id":id
-        }),
-        contentType:"application/json",
-        datatype: "json",
-        success:function(res){
+        type: "GET",
+        url: "https://api.shisanshui.rtxux.xyz/history/"+idd,
+                dataType: "json",
+                contentType: "application/json",
+                beforeSend: function(request) {
+                    request.setRequestHeader("X-Auth-Token", token);
+                },
+        success:  (res)=> {
             console.log(res);
-            var test=res;
-            console.log("success");
-            document.getElementById("11").innerHTML=test.data.detail[0].player_id;
-            document.getElementById("21").innerHTML=test.data.detail[1].player_id;
-            document.getElementById("31").innerHTML=test.data.detail[2].player_id;
-            document.getElementById("41").innerHTML=test.data.detail[3].player_id;
+            console.log(token);
+                    var test=res;
+                    console.log("success");
+                    document.getElementById("11").innerHTML=test.data.detail[0].player_id;
+                    document.getElementById("21").innerHTML=test.data.detail[1].player_id;
+                    document.getElementById("31").innerHTML=test.data.detail[2].player_id;
+                    document.getElementById("41").innerHTML=test.data.detail[3].player_id;
 
-            document.getElementById("12").innerHTML=test.data.detail[0].name;
-            document.getElementById("22").innerHTML=test.data.detail[1].name;
-            document.getElementById("32").innerHTML=test.data.detail[2].name;
-            document.getElementById("42").innerHTML=test.data.detail[3].name;
+                    document.getElementById("12").innerHTML=test.data.detail[0].name;
+                    document.getElementById("22").innerHTML=test.data.detail[1].name;
+                    document.getElementById("32").innerHTML=test.data.detail[2].name;
+                    document.getElementById("42").innerHTML=test.data.detail[3].name;
 
-            // document.getElementById("13").innerHTML=test.data.detail[0].card;
-            // document.getElementById("23").innerHTML=test.data.detail[1].card;
-            // document.getElementById("33").innerHTML=test.data.detail[2].card;
-            // document.getElementById("43").innerHTML=test.data.detail[3].card;
-
-           var s=test.data.detail[0].card.trim.split(/\s+/);
-            s=s+test.data.detail[1].card.trim.split(/\s+/);
-            s=s+test.data.detail[2].card.trim.split(/\s+/);
-            s=s+test.data.detail[3].card.trim.split(/\s+/);
-
-            document.getElementById("14").innerHTML=test.data.detail[0].score;
-            document.getElementById("24").innerHTML=test.data.detail[1].score;
-            document.getElementById("34").innerHTML=test.data.detail[2].score;
-            document.getElementById("44").innerHTML=test.data.detail[3].score;
-        },
-    });
+                    document.getElementById("14").innerHTML=test.data.detail[0].score;
+                    document.getElementById("24").innerHTML=test.data.detail[1].score;
+                    document.getElementById("34").innerHTML=test.data.detail[2].score;
+                    document.getElementById("44").innerHTML=test.data.detail[3].score;
+                    //连接四人的牌
+             s=test.data.detail[0].card+" "+test.data.detail[1].card+" "+test.data.detail[2].card+" "+test.data.detail[3].card;
+             //删除空格和逗号
+             s=s.split(/\s+|,/);
+             console.log(s);
+            for(var i=0;i<52;i++){
+                       disp();
+                   }
+                }
+        })
+}
+//显示52张牌
+function disp()  {
+    document.getElementById("1").src=ff(0);
+    document.getElementById("2").src=ff(1);
+    document.getElementById("3").src=ff(2);
+    document.getElementById("4").src=ff(3);
+    document.getElementById("5").src=ff(4);
+    document.getElementById("6").src=ff(5);
+    document.getElementById("7").src=ff(6);
+    document.getElementById("8").src=ff(7);
+    document.getElementById("9").src=ff(8);
+    document.getElementById(".10").src=ff(9);
+    document.getElementById(".11").src=ff(10);
+    document.getElementById(".12").src=ff(11);
+    document.getElementById(".13").src=ff(12);
+    //
+    document.getElementById(".14").src=ff(13);
+    document.getElementById(".15").src=ff(14);
+    document.getElementById(".16").src=ff(15);
+    document.getElementById(".17").src=ff(16);
+    document.getElementById(".18").src=ff(17);
+    document.getElementById(".19").src=ff(18);
+    document.getElementById(".20").src=ff(19);
+    document.getElementById(".21").src=ff(20);
+    document.getElementById(".22").src=ff(21);
+    document.getElementById(".23").src=ff(22);
+    document.getElementById(".24").src=ff(23);
+    document.getElementById(".25").src=ff(24);
+    document.getElementById(".26").src=ff(25);
+    //
+    document.getElementById(".27").src=ff(26);
+    document.getElementById(".28").src=ff(27);
+    document.getElementById(".29").src=ff(28);
+    document.getElementById(".30").src=ff(29);
+    document.getElementById(".31").src=ff(30);
+    document.getElementById(".32").src=ff(31);
+    document.getElementById(".33").src=ff(32);
+    document.getElementById(".34").src=ff(33);
+    document.getElementById(".35").src=ff(34);
+    document.getElementById(".36").src=ff(35);
+    document.getElementById(".37").src=ff(36);
+    document.getElementById(".38").src=ff(37);
+    document.getElementById(".39").src=ff(38);
+    // /
+    document.getElementById(".40").src=ff(39);
+    document.getElementById(".41").src=ff(40);
+    document.getElementById(".42").src=ff(41);
+    document.getElementById(".43").src=ff(42);
+    document.getElementById(".44").src=ff(43);
+    document.getElementById(".45").src=ff(44);
+    document.getElementById(".46").src=ff(45);
+    document.getElementById(".47").src=ff(46);
+    document.getElementById(".48").src=ff(47);
+    document.getElementById(".49").src=ff(48);
+    document.getElementById(".50").src=ff(49);
+    document.getElementById(".51").src=ff(50);
+    document.getElementById(".52").src=ff(51);
+}
+function ff(i) {
+    switch (s[i]) {
+        case "*A":
+            return "images/扑克牌/梅花A.png";
+        case "*2":
+            return "images/扑克牌/梅花2.png";
+        case "*3":
+            return "images/扑克牌/梅花3.png";
+        case "*4":
+            return "images/扑克牌/梅花4.png";
+        case "*5":
+            return "images/扑克牌/梅花5.png";
+        case "*6":
+            return "images/扑克牌/梅花6.png";
+        case "*7":
+            return "images/扑克牌/梅花7.png";
+        case "*8":
+            return "images/扑克牌/梅花8.png";
+        case "*9":
+            return "images/扑克牌/梅花9.png";
+        case "*10":
+            return "images/扑克牌/梅花10.png";
+        case "*J":
+            return "images/扑克牌/梅花J.png";
+        case "*Q":
+            return "images/扑克牌/梅花Q.png";
+        case "*K":
+            return "images/扑克牌/梅花K.png";
+        //////
+        case "&A":
+            return "images/扑克牌/红心A.png";
+        case "&2":
+            return "images/扑克牌/红心2.png";
+        case "&3":
+            return"images/扑克牌/红心3.png";
+        case "&4":
+            return"images/扑克牌/红心4.png";
+        case "&5":
+            return "images/扑克牌/红心5.png";
+        case "&6":
+            return "images/扑克牌/红心6.png";
+        case "&7":
+            return "images/扑克牌/红心7.png";
+        case "&8":
+            return"images/扑克牌/红心8.png";
+        case "&9":
+            return "images/扑克牌/红心9.png";
+        case "&10":
+            return "images/扑克牌/红心10.png";
+        case "&J":
+            return "images/扑克牌/红心J.png";
+        case "&Q":
+            return "images/扑克牌/红心Q.png";
+        case "&K":
+            return "images/扑克牌/红心K.png";
+        /////
+        case "$A":
+            return "images/扑克牌/黑桃A.png";
+        case "$2":
+            return "images/扑克牌/黑桃2.png";
+        case "$3":
+            return "images/扑克牌/黑桃3.png";
+        case "$4":
+            return "images/扑克牌/黑桃4.png";
+        case "$5":
+            return "images/扑克牌/黑桃5.png";
+        case "$6":
+            return "images/扑克牌/黑桃6.png";
+        case "$7":
+            return "images/扑克牌/黑桃7.png";
+        case "$8":
+            return "images/扑克牌/黑桃8.png";
+        case "$9":
+            return "images/扑克牌/黑桃9.png";
+        case "$10":
+            return "images/扑克牌/黑桃10.png";
+        case "$J":
+            return "images/扑克牌/黑桃J.png";
+        case "$Q":
+            return "images/扑克牌/黑桃Q.png";
+        case "$K":
+            return "images/扑克牌/黑桃K.png";
+        /////
+        case "#A":
+            return "images/扑克牌/方块A.png";
+        case "#2":
+            return "images/扑克牌/方块2.png";
+        case "#3":
+            return "images/扑克牌/方块3.png";
+        case "#4":
+            return "images/扑克牌/方块4.png";
+        case "#5":
+            return "images/扑克牌/方块5.png";
+        case "#6":
+            return "images/扑克牌/方块6.png";
+        case "#7":
+            return "images/扑克牌/方块7.png";
+        case "#8":
+            return "images/扑克牌/方块8.png";
+        case "#9":
+            return "images/扑克牌/方块9.png";
+        case "#10":
+            return "images/扑克牌/方块10.png";
+        case "#J":
+            return "images/扑克牌/方块J.png";
+        case "#Q":
+            return "images/扑克牌/方块Q.png";
+        case "#K":
+            return "images/扑克牌/方块K.png";
+    }
 }
