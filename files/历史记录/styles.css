@@ -65,7 +65,41 @@
 #mine{
   position: absolute;
   top:130px;
-  left:1400px;
+  left:1470px;
+}
+.int{
+  position: absolute;
+  top: 820px;
+  left: 800px;
+  color: #fde007;
+}
+.butt1{
+  position: absolute;
+  top:820px;
+  left: 880px;
+}
+.butt2{
+  position: absolute;
+  top:820px;
+  left: 950px;
+
+}
+.butt3{
+  position: absolute;
+  top: 820px;
+  left: 830px;
+}
+.currentpage{
+  color: #fde007;
+  position: absolute;
+  top:820px;
+  left: 1500px;
+}
+.find{
+
+  position: absolute;
+  top: 820px;
+  left: 910px;
 }
 table.g {
   border-radius: 6px;
