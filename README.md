@@ -19,6 +19,12 @@ https://img.shields.io/badge/屏幕比-75%-yellow.svg
 
 对不起，我们是在导出的时候才发现这个问题，有问题请联系。谢谢你辛苦了。
 
+账号：deideidie
+
+密码：deideidie
+
+id:1060
+
 前端：HTML+CSS+JavaScript
 
 后端：Python
