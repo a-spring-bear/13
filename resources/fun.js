@@ -316,7 +316,7 @@ function myhis() {
     })(jQuery);
 $.ajax({
     type: "GET",
-    url: "https://api.shisanshui.rtxux.xyz/history?page="+x+"&limit=6&player_id=1",
+    url: "https://api.shisanshui.rtxux.xyz/history?page="+x+"&limit=5&player_id=1060",
     headers: {
         'x-auth-token': token
     } ,
