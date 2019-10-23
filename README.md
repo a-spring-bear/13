@@ -3,11 +3,7 @@
 
 徽章：
 
-![](https://img.shields.io/badge/浏览器-谷歌-yellow.svg)
-
-
-
-![](https://img.shields.io/badge/屏幕比-75%-green.svg)
+![](https://img.shields.io/badge/浏览器-谷歌-yellow.svg)![](https://img.shields.io/badge/codequality-A-green.svg)
 
 
 
