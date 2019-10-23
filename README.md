@@ -5,7 +5,7 @@
 
 ![](https://img.shields.io/badge/浏览器-谷歌-yellow.svg)
 
-![](https://img.shields.io/badge/屏幕比-75%-yellow.svg)
+![](https://img.shields.io/badge/屏幕比-75%-green.svg)
 
 运行环境：window10、谷歌浏览器、webstorm或者其他web开发软件
 
